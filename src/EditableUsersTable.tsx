@@ -5,7 +5,18 @@ import { PlusOutlined, EditOutlined, MinusOutlined } from "@ant-design/icons";
 
 const { Column } = Table;
 
-export const EditableUsersTable = props => {
+interface User {
+  name: string;
+  age: number;
+}
+
+interface EditableUsersTableProps {
+  readonly users: User[];
+  readonly add: () => void;
+  readonly remove: (key: string) => void;
+}
+
+export const EditableUsersTable: React.FC<EditableUsersTableProps> = props => {
   const { users, add, remove } = props;
   const [editingIndex, setEditingIndex] = useState(undefined);
 
@@ -27,7 +38,6 @@ export const EditableUsersTable = props => {
         dataIndex={"age"}
         title={"Age"}
         render={(value, row, index) => {
-          // console.log(row);
           return (
             <Form.Item name={[index, "age"]}>
               {({ getFieldValue, getFieldsValue }) => {
@@ -65,7 +75,7 @@ export const EditableUsersTable = props => {
       />
       <Column
         title={"Action"}
-        render={(value, row, index) => {
+        render={(value, row: User, index) => {
           return (
             <React.Fragment>
               <Button
