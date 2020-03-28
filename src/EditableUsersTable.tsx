@@ -1,6 +1,6 @@
 import { useState } from "react";
 import * as React from "react";
-import { Form, Input, Button, Table } from "antd";
+import { Form, Input, Button, Table, InputNumber, Popconfirm } from "antd";
 import {
   PlusOutlined,
   EditOutlined,
@@ -10,6 +10,7 @@ import {
 } from "@ant-design/icons";
 import { FieldData } from "rc-field-form/lib/interface";
 import { FormInstance } from "antd/lib/form/util";
+import { FormItemProps } from "antd/lib/form";
 
 const { Column } = Table;
 
@@ -65,25 +66,25 @@ export const EditableUsersTable: React.FC<EditableUsersTableProps> = props => {
     <Table
       dataSource={users}
       pagination={false}
-      footer={() => {
-        return (
-          <Form.Item>
-            <Button onClick={addUser}>
-              <PlusOutlined /> Add User
-            </Button>
-          </Form.Item>
-        );
-      }}
+      footer={() => (
+        <Button onClick={addUser}>
+          <PlusOutlined /> Add User
+        </Button>
+      )}
     >
       <Column
         dataIndex={"age"}
         title={"Age"}
-        width={100}
+        width={125}
         render={(value, row, index) => {
           return (
-            <Form.Item name={[index, "age"]}>
-              {index === editingIndex ? <Input placeholder="age" /> : <Dummy />}
-            </Form.Item>
+            <EditableFormItem
+              name={[index, "age"]}
+              editing={index === editingIndex}
+              className={"ant-form-item-no-bottom-margin"}
+            >
+              <InputNumber placeholder="age" min={0} max={150} />
+            </EditableFormItem>
           );
         }}
       />
@@ -93,16 +94,14 @@ export const EditableUsersTable: React.FC<EditableUsersTableProps> = props => {
         width={200}
         render={(value, row, index) => {
           return (
-            <Form.Item
+            <EditableFormItem
               rules={[{ required: true, message: "Name is required" }]}
               name={[index, "name"]}
+              editing={index === editingIndex}
+              className={"ant-form-item-no-bottom-margin"}
             >
-              {index === editingIndex ? (
-                <Input placeholder="name" />
-              ) : (
-                <Dummy />
-              )}
-            </Form.Item>
+              <Input placeholder="name" />
+            </EditableFormItem>
           );
         }}
       />
@@ -133,14 +132,22 @@ export const EditableUsersTable: React.FC<EditableUsersTableProps> = props => {
                   icon={<EditOutlined />}
                   shape={"circle"}
                   style={{ marginRight: 8 }}
+                  disabled={editingIndex !== undefined}
                   onClick={() => setEditingIndex(index)}
                 />
-                <Button
-                  icon={<MinusOutlined />}
-                  shape={"circle"}
-                  type={"danger"}
-                  onClick={() => remove(index)}
-                />
+                <Popconfirm
+                  title="Are you sure？"
+                  okText="Yes"
+                  cancelText="No"
+                  onConfirm={() => remove(index)}
+                >
+                  <Button
+                    icon={<MinusOutlined />}
+                    shape={"circle"}
+                    type={"danger"}
+                    disabled={editingIndex !== undefined}
+                  />
+                </Popconfirm>
               </React.Fragment>
             );
           }
@@ -150,9 +157,21 @@ export const EditableUsersTable: React.FC<EditableUsersTableProps> = props => {
   );
 };
 
+interface EditableFormItemProps extends FormItemProps {
+  readonly editing: boolean;
+}
+
+const EditableFormItem: React.FC<EditableFormItemProps> = props => {
+  const { editing, ...rest } = props;
+  return (
+    <Form.Item {...rest}>{editing ? props.children : <Dummy />}</Form.Item>
+  );
+};
+
 interface DummyProps {
   readonly value?: any;
 }
-const Dummy: React.FC<DummyProps> = props => {
-  return <React.Fragment>{props.value}</React.Fragment>;
-};
+
+const Dummy: React.FC<DummyProps> = props => (
+  <div style={{ paddingLeft: 12 }}>{props.value}</div>
+);

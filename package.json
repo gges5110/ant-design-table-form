@@ -5,10 +5,10 @@
   "keywords": [],
   "main": "src/index.tsx",
   "dependencies": {
-    "antd": "4.0.1",
+    "antd": "4.0.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+    "react-scripts": "3.4.1"
   },
   "devDependencies": {
     "@types/react": "16.9.19",
