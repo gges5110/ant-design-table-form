@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
+  "homepage": "https://gges5110.github.io/ant-design-table-form",
   "main": "src/index.tsx",
   "dependencies": {
     "antd": "4.0.4",
