@@ -13,7 +13,7 @@ jobs:
           persist-credentials: false
 
       - name: Install dependencies
-        run: npm install --production
+        run: npm install
 
       - name: Build
         run: npm run build
