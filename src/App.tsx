@@ -13,7 +13,7 @@ export const App = () => {
           <GitHubButton
             href="https://github.com/gges5110/ant-design-table-form"
             data-size="large"
-            data-show-count="true"
+            data-show-count={true}
             aria-label="Star gges5110/ant-design-table-form on GitHub"
           >
             Star
