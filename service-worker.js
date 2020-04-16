@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ant-design-table-form/precache-manifest.c0da26f6490b437b3bbc9bb2d11c11e1.js"
+  "/ant-design-table-form/precache-manifest.162e8291381eb75da3d3cd7914b8c436.js"
 );
 
 self.addEventListener('message', (event) => {
