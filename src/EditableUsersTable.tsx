@@ -1,16 +1,16 @@
-import { useState } from "react";
-import * as React from "react";
-import { Form, Input, Button, Table, InputNumber, Popconfirm } from "antd";
 import {
-  PlusOutlined,
+  CloseOutlined,
   EditOutlined,
   MinusOutlined,
-  SaveOutlined,
-  CloseOutlined
+  PlusOutlined,
+  SaveOutlined
 } from "@ant-design/icons";
-import { FieldData } from "rc-field-form/lib/interface";
+import { Button, Input, InputNumber, Popconfirm, Table } from "antd";
 import { FormInstance } from "antd/lib/form/util";
-import { FormItemProps } from "antd/lib/form";
+import { FieldData } from "rc-field-form/lib/interface";
+import * as React from "react";
+import { useState } from "react";
+import { EditableFormItem } from "./EditableFormItem";
 
 const { Column } = Table;
 
@@ -156,22 +156,3 @@ export const EditableUsersTable: React.FC<EditableUsersTableProps> = props => {
     </Table>
   );
 };
-
-interface EditableFormItemProps extends FormItemProps {
-  readonly editing: boolean;
-}
-
-const EditableFormItem: React.FC<EditableFormItemProps> = props => {
-  const { editing, ...rest } = props;
-  return (
-    <Form.Item {...rest}>{editing ? props.children : <Dummy />}</Form.Item>
-  );
-};
-
-interface DummyProps {
-  readonly value?: any;
-}
-
-const Dummy: React.FC<DummyProps> = props => (
-  <div style={{ paddingLeft: 12 }}>{props.value}</div>
-);
