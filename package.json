@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
-  "homepage": "https://gges5110.github.io/ant-design-table-form",
+  "homepage": ".",
   "main": "src/index.tsx",
   "dependencies": {
     "@ant-design/icons": "4.0.6",
