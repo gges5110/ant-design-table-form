@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/ant-design-table-form/static/css/main.07bdbe83.chunk.css",
-    "main.js": "/ant-design-table-form/static/js/main.f52f41a9.chunk.js",
-    "main.js.map": "/ant-design-table-form/static/js/main.f52f41a9.chunk.js.map",
-    "runtime-main.js": "/ant-design-table-form/static/js/runtime-main.228f941d.js",
-    "runtime-main.js.map": "/ant-design-table-form/static/js/runtime-main.228f941d.js.map",
-    "static/css/2.a43b59a1.chunk.css": "/ant-design-table-form/static/css/2.a43b59a1.chunk.css",
-    "static/js/2.3363ec97.chunk.js": "/ant-design-table-form/static/js/2.3363ec97.chunk.js",
-    "static/js/2.3363ec97.chunk.js.map": "/ant-design-table-form/static/js/2.3363ec97.chunk.js.map",
-    "index.html": "/ant-design-table-form/index.html",
-    "precache-manifest.4c1c4bc94cd028a8bd95db2757665545.js": "/ant-design-table-form/precache-manifest.4c1c4bc94cd028a8bd95db2757665545.js",
-    "service-worker.js": "/ant-design-table-form/service-worker.js",
-    "static/css/2.a43b59a1.chunk.css.map": "/ant-design-table-form/static/css/2.a43b59a1.chunk.css.map",
-    "static/css/main.07bdbe83.chunk.css.map": "/ant-design-table-form/static/css/main.07bdbe83.chunk.css.map",
-    "static/js/2.3363ec97.chunk.js.LICENSE.txt": "/ant-design-table-form/static/js/2.3363ec97.chunk.js.LICENSE.txt"
+    "main.css": "./static/css/main.07bdbe83.chunk.css",
+    "main.js": "./static/js/main.f52f41a9.chunk.js",
+    "main.js.map": "./static/js/main.f52f41a9.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.4bd6f3d0.js",
+    "runtime-main.js.map": "./static/js/runtime-main.4bd6f3d0.js.map",
+    "static/css/2.a43b59a1.chunk.css": "./static/css/2.a43b59a1.chunk.css",
+    "static/js/2.8297c2d0.chunk.js": "./static/js/2.8297c2d0.chunk.js",
+    "static/js/2.8297c2d0.chunk.js.map": "./static/js/2.8297c2d0.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.ecde75d50d4a0cfc5dc1335e71ea766b.js": "./precache-manifest.ecde75d50d4a0cfc5dc1335e71ea766b.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/2.a43b59a1.chunk.css.map": "./static/css/2.a43b59a1.chunk.css.map",
+    "static/css/main.07bdbe83.chunk.css.map": "./static/css/main.07bdbe83.chunk.css.map",
+    "static/js/2.8297c2d0.chunk.js.LICENSE.txt": "./static/js/2.8297c2d0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.228f941d.js",
+    "static/js/runtime-main.4bd6f3d0.js",
     "static/css/2.a43b59a1.chunk.css",
-    "static/js/2.3363ec97.chunk.js",
+    "static/js/2.8297c2d0.chunk.js",
     "static/css/main.07bdbe83.chunk.css",
     "static/js/main.f52f41a9.chunk.js"
   ]
